@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- SEO & Meta Tags -->
+    <title>Líder Marine | Manutenção e Venda de Motores Mercury</title>
+    <meta name="description" content="A Líder Marine atua no segmento náutico oferecendo venda de motores, manutenção especializada, peças e suporte técnico. Representante Mercury Marine.">
+    <meta name="keywords" content="Líder Marine, Mercury Marine, motores marítimos, manutenção de barcos, mecânica náutica, peças nauticas, São Vicente, lanchas, motores de popa, manutenção preventiva nautica">
+    <meta name="author" content="Líder Marine">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.lidermarine.com.br/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.lidermarine.com.br/">
+    <meta property="og:title" content="Líder Marine | Soluções Náuticas Especializadas">
+    <meta property="og:description" content="Representante Mercury Marine. Qualidade, suporte técnico e confiança em cada detalhe do seu motor marítimo.">
+    <meta property="og:image" content="logo_lider-marine.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MarineResort",
+      "name": "Líder Marine",
+      "image": "logo_lider-marine.png",
+      "@id": "",
+      "url": "https://www.lidermarine.com.br/",
+      "telephone": "+5513997005510",
+      "description": "Venda e manutenção de motores marítimos com atendimento especializado. Representante Mercury Marine.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rua Antônio Fernandes, 152 - Jd. Bechara",
+        "addressLocality": "São Vicente",
+        "addressRegion": "SP",
+        "postalCode": "11325-050",
+        "addressCountry": "BR"
+      }
+    }
+    </script>
+
+    <!-- Google Fonts (Estilo Mercury Marine) & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* CSS Reset & Variables (DARK MODE + MERCURY FONT STYLE) */
+        :root {
+            --primary-bg: #121212; 
+            --secondary-bg: #1e1e1e; 
+            --btn-bg: #b51919;    
+            --text-light: #f5efef; 
+            --text-white: #ffffff; 
+            --border-color: #333333;
+            --wa-green: #25D366; /* Cor do WhatsApp */
+            --font-headings: 'Barlow', sans-serif; 
+            --font-body: 'Inter', sans-serif;      
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--primary-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased; 
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Proteção de Mídia (CSS) */
+        img, video, iframe {
+            pointer-events: none;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+        
+        .allow-click {
+            pointer-events: auto !important;
+        }
+
+        /* Títulos Padrão */
+        h1, h2, h3, h4 { 
+            font-family: var(--font-headings); 
+            font-weight: 800; 
+            color: var(--text-white); 
+        }
+
+        /* =========================================
+           SEÇÃO 1: LINKTREE HEADER
+           ========================================= */
+        .linktree-header {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px 80px 20px;
+            z-index: 1;
+            overflow: hidden; /* Evita vazamento horizontal no mobile */
+        }
+
+        /* Ajuste de Background Responsivo */
+        .linktree-bg {
+            position: absolute;
+            top: -5%; left: -5%; 
+            width: 110%; height: 110%;
+            background-image: url('bg-linktree.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: blur(8px);
+            z-index: -2;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(10, 10, 10, 0.80);
+            z-index: -1;
+        }
+
+        .profile-container {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--text-light);
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid var(--btn-bg);
+            object-fit: cover;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.8);
+        }
+
+        .profile-container h1 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .profile-container p {
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: #b0b0b0;
+        }
+
+        .links-container {
+            width: 100%;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .link-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            background-color: var(--btn-bg);
+            color: var(--text-white);
+            padding: 16px 20px;
+            border-radius: 6px; 
+            text-decoration: none;
+            font-family: var(--font-headings);
+            font-weight: 700;
+            font-size: 1.05rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            pointer-events: auto;
+        }
+
+        .link-btn i {
+            position: absolute;
+            left: 20px;
+            font-size: 1.4rem;
+        }
+
+        .link-btn span {
+            text-align: center;
+            width: 100%;
+        }
+
+        .link-btn:hover {
+            background-color: transparent;
+            color: var(--text-white);
+            border-color: var(--text-white);
+            transform: translateY(-2px);
+        }
+
+        .map-container {
+            width: 100%;
+            max-width: 500px;
+            margin-top: 15px;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            position: relative;
+            background: var(--text-white); /* Fundo branco pra Maps Claro */
+        }
+        
+        .map-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--btn-bg);
+            color: var(--text-white);
+            padding: 12px;
+            font-family: var(--font-headings);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+        }
+
+        .map-header i {
+            position: absolute;
+            left: 20px;
+            font-size: 1.2rem;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 200px;
+            border: none;
+            display: block;
+            pointer-events: auto;
+            /* Invert removido para visual claro do Maps */
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            color: var(--btn-bg);
+            font-size: 2.5rem;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+            pointer-events: auto;
+            transition: color 0.3s;
+        }
+
+        .scroll-down:hover { color: var(--text-white); }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-15px); }
+            60% { transform: translateY(-7px); }
+        }
+
+        /* =========================================
+           MENU E NAVEGAÇÃO FIXA
+           ========================================= */
+        .top-navbar {
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            height: 70px;
+            background-color: rgba(18, 18, 18, 0.98);
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            transform: translateY(-100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .top-navbar.visible { transform: translateY(0); }
+
+        .menu-btn {
+            position: absolute;
+            left: 20px;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: var(--text-white);
+            cursor: pointer;
+            pointer-events: auto;
+        }
+
+        .nav-logo {
+            height: 40px;
+            object-fit: contain;
+        }
+
+        .side-menu {
+            position: fixed;
+            top: 0; left: -300px;
+            width: 280px;
+            height: 100vh;
+            background-color: var(--secondary-bg);
+            box-shadow: 2px 0 15px rgba(0,0,0,0.8);
+            z-index: 1001;
+            transition: left 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            padding: 40px 0 20px 0; /* Padding superior ajustado por causa do logo */
+            overflow-y: auto;
+        }
+
+        .side-menu.active { left: 0; }
+
+        .close-btn {
+            position: absolute;
+            top: 15px; right: 20px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--text-white);
+            cursor: pointer;
+            pointer-events: auto;
+            z-index: 2;
+        }
+
+        /* Logo do Menu Lateral */
+        .side-menu-logo {
+            width: 160px;
+            margin: 0 auto 30px auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        .side-menu ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .side-menu ul li a {
+            display: block;
+            padding: 15px 25px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-family: var(--font-headings);
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            pointer-events: auto;
+        }
+
+        .side-menu ul li a:hover {
+            background-color: var(--btn-bg);
+            color: var(--text-white);
+            padding-left: 35px;
+            border-color: transparent;
+        }
+
+        /* Estilo Exclusivo do Botão WhatsApp Menu */
+        .menu-link-wa {
+            color: var(--wa-green) !important;
+        }
+
+        .menu-link-wa:hover {
+            background-color: var(--wa-green) !important;
+            color: var(--text-white) !important;
+            padding-left: 35px;
+        }
+
+        .menu-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100vh;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s;
+        }
+
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* =========================================
+           SEÇÃO 2: HERO INÍCIO
+           ========================================= */
+        .hero-section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 20px 60px;
+            overflow: hidden; /* Mantém video contido na responsividade */
+        }
+
+        .video-bg {
+            position: absolute;
+            top: 0; left: 0; 
+            width: 100%; height: 100%;
+            object-fit: cover; /* Responsividade perfeita pra vídeo */
+            z-index: -2;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(18, 18, 18, 0.88);
+            z-index: -1;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            z-index: 1;
+        }
+
+        .hero-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            line-height: 1.2;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-content p {
+            font-size: 1.15rem;
+            color: #d1d1d1;
+            margin-bottom: 35px;
+            line-height: 1.8;
+            font-weight: 400;
+        }
+        
+        .hero-content strong {
+            color: var(--text-white);
+            font-weight: 600;
+        }
+
+        .btn-saiba-mais {
+            display: inline-block;
+            background-color: var(--btn-bg);
+            color: var(--text-white);
+            padding: 16px 45px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-family: var(--font-headings);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            pointer-events: auto;
+        }
+
+        .btn-saiba-mais:hover {
+            background-color: transparent;
+            color: var(--text-white);
+            border-color: var(--text-white);
+        }
+
+        /* =========================================
+           SEÇÃO 3: SERVIÇOS (INSTITUCIONAL PREMIUM)
+           ========================================= */
+        .services-section {
+            padding: 100px 20px;
+            background-color: var(--primary-bg); 
+            text-align: center;
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services-banner {
+            width: 100%;
+            margin-bottom: 30px;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            position: relative;
+        }
+
+        .services-banner img {
+            width: 100%;
+            max-height: 450px;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.85);
+            transition: filter 0.5s ease;
+        }
+
+        .services-banner:hover img {
+            filter: brightness(1);
+        }
+
+        /* Setor dos Logos Mercury Horizontal */
+        .mercury-logos-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap; /* Em telas menores eles quebram de linha sem amassar */
+            margin-bottom: 50px;
+            padding: 25px 20px;
+            background: rgba(255,255,255,0.02);
+            border-radius: 6px;
+            border: 1px solid rgba(255,255,255,0.03);
+        }
+
+        .mercury-logos-row img {
+            max-height: 35px;
+            object-fit: contain;
+            opacity: 0.6; /* Combina bem com dark mode */
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .mercury-logos-row img:hover {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        .services-header {
+            max-width: 900px;
+            margin: 0 auto 60px auto;
+        }
+
+        .services-header h2 {
+            font-size: 2.8rem;
+            color: var(--text-white);
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .mercury-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 25px;
+            background: rgba(181, 25, 25, 0.08); 
+            color: var(--btn-bg);
+            border: 1px solid rgba(181, 25, 25, 0.4);
+            border-radius: 4px;
+            font-family: var(--font-headings);
+            font-weight: 800;
+            font-size: 1rem;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+        }
+
+        .mercury-badge i {
+            font-size: 1.2rem;
+        }
+
+        .services-header p {
+            font-size: 1.1rem;
+            color: #b0b0b0;
+            line-height: 1.8;
+            font-weight: 400;
+        }
+
+        .services-header strong {
+            color: var(--text-white);
+            font-weight: 600;
+        }
+
+        .services-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            align-items: stretch; 
+        }
+
+        .service-card {
+            background: var(--secondary-bg);
+            flex: 1 1 320px;
+            max-width: 380px;
+            padding: 45px 35px;
+            border-radius: 4px;
+            text-align: left;
+            border: 1px solid rgba(255,255,255,0.03); 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 0;
+            height: 4px;
+            background: var(--btn-bg);
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .service-card:hover::before {
+            width: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            background: #222222;
+        }
+
+        .service-icon-minimal {
+            font-size: 2.2rem;
+            color: var(--btn-bg);
+            margin-bottom: 25px;
+            display: block;
+            opacity: 0.95;
+        }
+
+        .service-card h4 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .service-card p {
+            font-size: 1rem;
+            color: #a0a0a0;
+            line-height: 1.7;
+            flex-grow: 1; 
+        }
+
+        /* =========================================
+           BOTÃO VOLTAR AO TOPO
+           ========================================= */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--secondary-bg);
+            color: var(--text-white);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+            border: 1px solid var(--border-color);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+            pointer-events: auto;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--btn-bg);
+            border-color: var(--btn-bg);
+            transform: translateY(-3px);
+        }
+
+        /* Media Queries Globais (Mobile/Responsividade) */
+        @media (max-width: 768px) {
+            .mercury-logos-row {
+                gap: 20px;
+                padding: 15px;
+            }
+            .mercury-logos-row img {
+                max-height: 25px; /* Menor no mobile para caber bonito */
+            }
+        }
+
+        @media (min-width: 768px) {
+            .hero-content h2 { font-size: 3.2rem; }
+            .hero-content p { font-size: 1.25rem; }
+            .link-btn { font-size: 1.1rem; padding: 18px 20px; }
+            .services-header h2 { font-size: 3.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV BAR FIXA -->
+    <nav class="top-navbar" id="navbar">
+        <button class="menu-btn" id="openMenu" aria-label="Abrir Menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <img src="logo_lider-marine.png" alt="Líder Marine Logo" class="nav-logo">
+    </nav>
+
+    <!-- MENU LATERAL -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <aside class="side-menu" id="sideMenu">
+        <button class="close-btn" id="closeMenu" aria-label="Fechar Menu">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        
+        <!-- Logo no Menu Lateral adicionada -->
+        <img src="logo_lider-marine.png" alt="Líder Marine Logo" class="side-menu-logo">
+
+        <ul>
+            <li><a href="#inicio" class="menu-link">Início</a></li>
+            <li><a href="#inicio" class="menu-link">A Líder Marine</a></li>
+            <li><a href="#servicos" class="menu-link">Serviços</a></li>
+            <li><a href="#inicio" class="menu-link">Motores Mercury</a></li>
+            <li><a href="#inicio" class="menu-link">Peças e Acessórios</a></li>
+            <li><a href="#inicio" class="menu-link">Localização</a></li>
+            
+            <!-- Botão com estilização única de cor WhatsApp -->
+            <li><a href="https://wa.me/13997005510" target="_blank" class="menu-link menu-link-wa">
+                <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </a></li>
+        </ul>
+    </aside>
+
+    <!-- SEÇÃO 1: LINKTREE -->
+    <header class="linktree-header" id="linktree">
+        <div class="linktree-bg"></div>
+        <div class="video-overlay"></div>
+
+        <div class="profile-container">
+            <img src="avatar.png" alt="Líder Marine Avatar" class="avatar">
+            <h1>Líder Marine</h1>
+            <p>Atendimento Sem Hora Marcada 🕐</p>
+        </div>
+
+        <div class="links-container">
+            <a href="https://wa.me/13997005510" target="_blank" rel="noopener noreferrer" class="link-btn">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>WhatsApp</span>
+            </a>
+            
+            <a href="https://www.instagram.com/lidermarine_mercury/" target="_blank" rel="noopener noreferrer" class="link-btn">
+                <i class="fa-brands fa-instagram"></i>
+                <span>Instagram</span>
+            </a>
+
+            <a href="https://share.google/mEcwnpixEGvBl7YMI" target="_blank" rel="noopener noreferrer" class="link-btn">
+                <i class="fa-solid fa-star"></i>
+                <span>Avalie-nos</span>
+            </a>
+
+            <!-- Maps Atualizado (Endereço e Modo Claro) -->
+            <div class="map-container">
+                <div class="map-header">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Nossa Localização</span>
+                </div>
+                <!-- Iframe oficial de São Vicente -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3645.717520037135!2d-46.38612158498064!3d-23.970341784481432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce1c9d2f2df3e3%3A0x6b77c688d01d4a8!2sR.%20Ant%C3%B4nio%20Fernandes%2C%20152%20-%20Jardim%20Bechara%2C%20S%C3%A3o%20Vicente%20-%20SP%2C%2011325-050!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="allow-click"></iframe>
+            </div>
+        </div>
+
+        <a href="#inicio" class="scroll-down" aria-label="Rolar para baixo">
+            <i class="fa-solid fa-chevron-down"></i>
+        </a>
+    </header>
+
+    <!-- SEÇÃO 2: INÍCIO (HERO) -->
+    <main id="inicio" class="hero-section">
+        <video class="video-bg" autoplay loop muted playsinline>
+            <source src="bg-hero.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <h2>Venda e manutenção de motores marítimos com atendimento especializado</h2>
+            <p>A <strong>Líder Marine</strong> é representante <strong>Mercury Marine</strong> e oferece soluções náuticas para quem busca qualidade, suporte técnico e confiança em cada detalhe.</p>
+            <a href="#servicos" class="btn-saiba-mais">Saiba Mais</a>
+        </div>
+    </main>
+
+    <!-- SEÇÃO 3: SERVIÇOS (INSTITUCIONAL PREMIUM) -->
+    <section id="servicos" class="services-section">
+        <div class="services-container">
+            
+            <div class="services-banner">
+                <img src="banner-servicos.jpg" alt="Estrutura técnica e atendimento especializado Líder Marine" />
+            </div>
+
+            <!-- Setor dos Logos Mercury Adicionado Aqui -->
+            <div class="mercury-logos-row">
+                <img src="mercury-mercruiser.png" alt="Mercury MerCruiser">
+                <img src="mercury-diesel.png" alt="Mercury Diesel">
+                <img src="mercury-outboards.png" alt="Mercury Outboards">
+                <img src="mercury-verado.png" alt="Mercury Verado">
+            </div>
+
+            <div class="services-header">
+                <h2>Serviços</h2>
+                <div class="mercury-badge">
+                    <i class="fa-solid fa-award"></i>
+                    Representante Oficial Mercury Marine
+                </div>
+                <p>A <strong>Líder Marine</strong> atua no segmento náutico oferecendo venda de motores, manutenção especializada, peças e suporte técnico para embarcações. Com estrutura própria e equipe qualificada, atendemos clientes da Baixada Santista, Interior e Litoral de São Paulo, além de realizar envios para todo o Brasil.</p>
+            </div>
+
+            <div class="services-grid">
+                
+                <div class="service-card">
+                    <i class="fa-solid fa-anchor service-icon-minimal"></i>
+                    <h4>Motores marítimos</h4>
+                    <p>Comercialização de motores de popa, centro rabeta e motores inboard da Mercury Marine, oferecendo suporte técnico e orientação especializada para cada tipo de embarcação e necessidade de uso.</p>
+                </div>
+
+                <div class="service-card">
+                    <i class="fa-solid fa-screwdriver-wrench service-icon-minimal"></i>
+                    <h4>Revisão e manutenção</h4>
+                    <p>Serviços de manutenção preventiva e corretiva realizados com ferramental adequado e acompanhamento técnico especializado para motores marítimos. Foco na durabilidade, eficiência e segurança.</p>
+                </div>
+
+                <div class="service-card">
+                    <i class="fa-solid fa-ship service-icon-minimal"></i>
+                    <h4>Entrega técnica</h4>
+                    <p>Realizamos a entrega técnica de embarcações novas, fornecendo orientações sobre operação, funcionamento e cuidados essenciais para garantir melhor desempenho e conservação do motor.</p>
+                </div>
+
+                <div class="service-card">
+                    <i class="fa-solid fa-gears service-icon-minimal"></i>
+                    <h4>Peças e acessórios</h4>
+                    <p>Ampla linha de peças, componentes e acessórios náuticos para diferentes aplicações, com suporte especializado na escolha dos produtos e envio para todo o território nacional.</p>
+                </div>
+
+                <div class="service-card">
+                    <i class="fa-solid fa-users-gear service-icon-minimal"></i>
+                    <h4>Estrutura e atendimento</h4>
+                    <p>Contamos com oficina própria, atendimento personalizado e profissionais preparados para oferecer soluções técnicas com qualidade, transparência e compromisso em cada etapa do serviço.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- BOTÃO VOLTAR AO TOPO -->
+    <a href="#linktree" class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+
+    <!-- SCRIPTS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            document.addEventListener('contextmenu', function(e) {
+                if (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO') {
+                    e.preventDefault();
+                }
+            });
+
+            document.addEventListener('dragstart', function(e) {
+                if (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO') {
+                    e.preventDefault();
+                }
+            });
+
+            const navbar = document.getElementById('navbar');
+            const backToTop = document.getElementById('backToTop');
+
+            /* LÓGICA CORRIGIDA PARA O SCROLL (Funcionamento 100% Mobile/Desktop) */
+            window.addEventListener('scroll', () => {
+                // Ao invés da altura da seção inicial (que flutua em mobile), usamos 80% da tela do usuário.
+                const scrollPos = window.scrollY || window.pageYOffset;
+                const threshold = window.innerHeight * 0.8; 
+                
+                if (scrollPos >= threshold) {
+                    navbar.classList.add('visible');
+                    backToTop.classList.add('visible');
+                } else {
+                    navbar.classList.remove('visible');
+                    backToTop.classList.remove('visible');
+                }
+            });
+
+            const openMenuBtn = document.getElementById('openMenu');
+            const closeMenuBtn = document.getElementById('closeMenu');
+            const sideMenu = document.getElementById('sideMenu');
+            const menuOverlay = document.getElementById('menuOverlay');
+            const menuLinks = document.querySelectorAll('.menu-link');
+
+            function toggleMenu() {
+                sideMenu.classList.toggle('active');
+                menuOverlay.classList.toggle('active');
+            }
+
+            openMenuBtn.addEventListener('click', toggleMenu);
+            closeMenuBtn.addEventListener('click', toggleMenu);
+            menuOverlay.addEventListener('click', toggleMenu);
+
+            menuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if(sideMenu.classList.contains('active')) toggleMenu();
+                });
+            });
+
+        });
+    </script>
+</body>
+</html>
