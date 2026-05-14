@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposta e Plano de Execução - Líder Marine | Victor Silva Design</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="isotipo_victor-silva.png">
+    
+    <!-- FontAwesome (Ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ================= VARIÁVEIS DE COR E ESTILO ================= */
+        :root {
+            --bg-main: #0a0a0a;
+            --bg-surface: #141414;
+            --bg-card: #1c1c1c;
+            --text-primary: #ffffff;
+            --text-secondary: #a1a1aa;
+            --accent-color: #c71f1f; /* Vermelho Líder Marine */
+            --accent-gradient: linear-gradient(135deg, #c71f1f, #f65c5c);
+            --border-color: #27272a;
+            --radius-md: 12px;
+            --radius-lg: 24px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ================= RESET E BASE ================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        ul { list-style: none; }
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
+
+        /* ================= TIPOGRAFIA ================= */
+        h1, h2, h3 { line-height: 1.2; letter-spacing: -0.02em; }
+        
+        .gradient-text {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ================= LAYOUT GERAL ================= */
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section { padding: 100px 0; } /* Mais respiro entre as sessões */
+
+        /* ================= HEADER ================= */
+        header {
+            padding: 30px 0;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+            background-color: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        header img {
+        height: 48px;
+        width: auto;
+        object-fit: contain;
+        filter: brightness(0) invert(1);
+        }
+
+        /* ================= HERO SECTION ================= */
+        .hero {
+            text-align: center;
+            padding: 100px 24px 80px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 24px;
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* ================= CARDS DE SERVIÇO VERTICAIS ================= */
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+
+        .grid-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 40px; /* Espaço generoso entre os blocos verticais */
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 48px;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 48px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            border-color: var(--accent-color);
+            box-shadow: 0 10px 40px rgba(199, 31, 31, 0.08);
+            transform: translateY(-5px);
+        }
+
+        .card-content {
+            flex: 1;
+        }
+
+        .card-visual {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        /* Ícone principal da seção dentro do card */
+        .card-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(255,255,255,0.05);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            color: var(--accent-color);
+            margin-bottom: 24px;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+        }
+
+        .card > .card-content > p {
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            font-size: 1rem;
+        }
+
+        .card ul li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 12px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .card ul li i {
+            position: absolute;
+            left: 0;
+            top: 4px;
+            color: var(--accent-color);
+            font-size: 0.8rem;
+        }
+
+        /* Mockup do Navegador para Card 1 */
+        .browser-mockup {
+            width: 100%;
+            max-width: 450px;
+            background: #000;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+        }
+
+        .browser-header {
+            height: 32px;
+            background: #1e1e1e;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            padding: 0 12px;
+            gap: 6px;
+        }
+
+        .browser-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #444;
+        }
+
+        .browser-dot.red { background: #ff5f56; }
+        .browser-dot.yellow { background: #ffbd2e; }
+        .browser-dot.green { background: #27c93f; }
+
+        .browser-mockup iframe {
+            width: 100%;
+            height: 320px;
+            border: none;
+            display: block;
+            pointer-events: none; /* Desativa a interação para não quebrar o scroll do usuário */
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+
+        .card:hover .browser-mockup iframe {
+            opacity: 1;
+        }
+
+        /* Avatar para o Card 2 */
+        .avatar-preview {
+            width: 240px;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--bg-card);
+            outline: 2px solid var(--accent-color);
+            outline-offset: 4px;
+            box-shadow: 0 15px 35px rgba(199, 31, 31, 0.15);
+        }
+        /* Imagens retangulares para os cards 3 e 4 */
+        .card-preview {
+            width: 100%;
+            max-width: 420px;
+            height: auto;
+            object-fit: cover;
+            border-radius: 18px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+            transition: var(--transition);
+        }
+
+        .card:hover .card-preview {
+            transform: scale(1.02);
+            border-color: var(--accent-color);
+        }
+        /* Placeholder Icon para os Cards 3 e 4 */
+        .visual-placeholder {
+            font-size: 8rem;
+            color: var(--border-color);
+            opacity: 0.3;
+            transition: var(--transition);
+        }
+
+        .card:hover .visual-placeholder {
+            color: var(--accent-color);
+            opacity: 0.15;
+            transform: scale(1.05);
+        }
+
+        /* ================= TIMELINE ================= */
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: var(--border-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 40px;
+        }
+
+        .timeline-item:last-child { margin-bottom: 0; }
+
+        .timeline-dot {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--bg-surface);
+            border: 2px solid var(--accent-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            z-index: 2;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .timeline-content p { color: var(--text-secondary); }
+
+        /* ================= INFOS EXTRAS (Prazo e Objetivo) ================= */
+        .info-blocks {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .info-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+        }
+
+        .info-card h3 { margin-bottom: 16px; font-size: 1.5rem; display: flex; align-items: center; gap: 10px; }
+        .info-card p { color: var(--text-secondary); font-size: 1.1rem; }
+
+        /* ================= FOOTER ================= */
+        footer {
+            background-color: var(--bg-surface);
+            border-top: 1px solid var(--border-color);
+            padding: 60px 0 40px;
+            margin-top: 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .footer-brand img {
+            height: 50px;
+            width: auto;
+            margin-bottom: 24px;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-brand p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .footer-links-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .footer-col ul li { margin-bottom: 12px; }
+        .footer-col ul li a {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-col ul li a:hover { color: var(--accent-color); }
+
+        .footer-bottom {
+            margin-top: 60px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        /* ================= ANIMAÇÕES ================= */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ================= RESPONSIVO ================= */
+        @media (max-width: 900px) {
+            .card {
+                flex-direction: column;
+                gap: 40px;
+                padding: 40px 24px;
+                text-align: center;
+            }
+            .card ul li {
+                text-align: left; /* Mantém os checks organizados à esquerda */
+            }
+            .card-icon {
+                margin: 0 auto 24px;
+            }
+            .card-visual {
+                order: -1; /* Joga a imagem/iframe pra cima no mobile */
+            }
+            .browser-mockup iframe {
+                height: 250px; /* Reduz a altura do mockup em telas menores */
+            }
+        }
+
+        @media (max-width: 768px) {
+            section { padding: 60px 0; } /* Ajuste de separação mobile */
+            .section-header { margin-bottom: 40px; }
+            .grid-cards { gap: 32px; }
+            .info-blocks, .footer-grid { grid-template-columns: 1fr; }
+            .timeline::before { left: 11px; }
+            .timeline-dot { width: 24px; height: 24px; font-size: 0.7rem; }
+            .timeline-item { padding-left: 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho (Isotipo) -->
+    <header>
+        <div class="container">
+            <img src="isotipo_victor-silva.png" alt="Isotipo Victor Silva Design">
+        </div>
+    </header>
+
+    <main>
+        <!-- Seção Hero -->
+        <section class="hero reveal">
+            <div class="container">
+                <h1>Modernização Digital<br><span class="gradient-text">Líder Marine</span></h1>
+                <p>Plano para lapidar a presença digital, fortalecer a marca e otimizar a organização interna.</p>
+            </div>
+        </section>
+
+        <!-- O que será desenvolvido -->
+        <section class="container reveal">
+            <div class="section-header">
+                <h2>O que será desenvolvido?</h2>
+            </div>
+            
+            <div class="grid-cards">
+                <!-- Card 1: Site Institucional (Com Iframe Preview) -->
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-icon"><i class="fa-solid fa-globe"></i></div>
+                        <h3>Site Institucional + Catálogo</h3>
+                        <p>Site moderno no formato institucional + acesso rápido, focado em conversão e apresentação profissional.</p>
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> Apresentação institucional da empresa</li>
+                            <li><i class="fa-solid fa-check"></i> Seção de serviços</li>
+                            <li><i class="fa-solid fa-check"></i> Catálogo/vitrine de principais peças e serviços</li>
+                            <li><i class="fa-solid fa-check"></i> Integração com localização e redes sociais</li>
+                            <li><i class="fa-solid fa-check"></i> Navegação 100% responsiva (PC & Mobile)</li>
+                        </ul>
+                    </div>
+                    <div class="card-visual">
+                        <div class="browser-mockup">
+                            <div class="browser-header">
+                                <div class="browser-dot red"></div>
+                                <div class="browser-dot yellow"></div>
+                                <div class="browser-dot green"></div>
+                            </div>
+                            <!-- O pointer-events:none no CSS bloqueia o usuário de rolar o iframe sem querer -->
+                            <iframe src="https://thisishaunted.github.io/lidermarine" title="Pré-visualização do Site Líder Marine" scrolling="no" tabindex="-1"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Identidade Visual (Com Avatar) -->
+                <div class="card">
+                    <div class="card-visual">
+                        <img src="avatar_lider-marine.png" alt="Demonstração Avatar Líder Marine" class="avatar-preview">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon"><i class="fa-solid fa-palette"></i></div>
+                        <h3>Reforma de Identidade Visual</h3>
+                        <p>Modernização da comunicação visual para fortalecer o posicionamento profissional da marca.</p>
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> Refinamento/recriação do logotipo</li>
+                            <li><i class="fa-solid fa-check"></i> Definição de uma nova paleta de cores</li>
+                            <li><i class="fa-solid fa-check"></i> Tipografia da marca</li>
+                            <li><i class="fa-solid fa-check"></i> Padronização visual completa</li>
+                            <li><i class="fa-solid fa-check"></i> Aplicações digitais da identidade</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 3: Instagram -->
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-icon"><i class="fa-brands fa-instagram"></i></div>
+                        <h3>Reforma do Instagram</h3>
+                        <p>Reestruturação visual e estratégica, alinhando a rede social à nova identidade da marca.</p>
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> Reorganização visual do perfil</li>
+                            <li><i class="fa-solid fa-check"></i> Otimização estratégica da Bio</li>
+                            <li><i class="fa-solid fa-check"></i> Capas para destaques</li>
+                            <li><i class="fa-solid fa-check"></i> Templates personalizados (posts/reels)</li>
+                        </ul>
+                    </div>
+                    <div class="card-visual">
+                        <!-- Espaço visual para manter a simetria da UI em monitores -->
+      
+                    <div class="card-visual">
+                        <img src="insta_lider-marine.png" alt="Demonstração Avatar Líder Marine" class="card-preview">
+                    </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: To-Do -->
+                <div class="card">
+                    <div class="card-visual">
+                        <img src="todo_lider-marine.png" alt="Demonstração Avatar Líder Marine" class="card-preview">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon"><i class="fa-solid fa-list-check"></i></div>
+                        <h3>Organização Interna (To-Do)</h3>
+                        <p>Estruturação de um sistema funcional para controle de demandas e serviços da oficina, como por exemplo:</p>
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> Organização de serviços em andamento</li>
+                            <li><i class="fa-solid fa-check"></i> Controle de revisões e retornos</li>
+                            <li><i class="fa-solid fa-check"></i> Lembretes de manutenção preventiva</li>
+                            <li><i class="fa-solid fa-check"></i> Estrutura para acompanhamento de clientes</li>
+                            <li><i class="fa-solid fa-check"></i> Treinamento básico de utilização</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Plano de Execução -->
+        <section class="container reveal" style="padding-top: 40px;">
+            <div class="section-header">
+                <h2>Plano de Execução</h2>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot">1</div>
+                    <div class="timeline-content">
+                        <h3>Finalização do site</h3>
+                        <p>Conclusão da estrutura institucional, refinamento visual, responsividade e otimização básica.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot">2</div>
+                    <div class="timeline-content">
+                        <h3>Consolidação da identidade visual</h3>
+                        <p>Definição da linguagem visual oficial da marca e de suas aplicações digitais.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot">3</div>
+                    <div class="timeline-content">
+                        <h3>Reforma do Instagram</h3>
+                        <p>Padronização visual do perfil e criação de materiais para comunicação diária.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot">4</div>
+                    <div class="timeline-content">
+                        <h3>Estruturação do catálogo</h3>
+                        <p>Organização da vitrine digital de peças e serviços da oficina.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot">5</div>
+                    <div class="timeline-content">
+                        <h3>Implementação do Microsoft ToDo</h3>
+                        <p>Organização operacional e estruturação do fluxo de trabalho interno da oficina.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Prazo e Objetivo -->
+        <section class="container reveal" style="padding-top: 40px;">
+            <div class="info-blocks">
+                <div class="info-card">
+                    <h3><i class="fa-regular fa-clock" style="color: var(--accent-color);"></i> Prazo</h3>
+                    <p>Até <strong>15 dias úteis</strong> para a conclusão completa do projeto.</p>
+                </div>
+                <div class="info-card" style="border-color: var(--accent-color);">
+                    <h3>Objetivo do Projeto</h3>
+                    <p>Modernizar a presença digital da oficina, fortalecer a marca e melhorar a organização operacional, criando uma comunicação mais profissional e uma experiência prática e fluida para os clientes e para a equipe interna.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                
+                <!-- Logo e Branding -->
+                <div class="footer-brand">
+                    <img src="logo_victor-silva.png" alt="Logo Victor Silva Design">
+                    <p>Design estratégico focado em resultados, estética e experiência do usuário.</p>
+                </div>
+
+                <!-- Links e Contatos -->
+                <div class="footer-links-container">
+                    <div class="footer-col">
+                        <h4>Contato</h4>
+                        <ul>
+                            <li><a href="https://wa.me/13988763736" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a></li>
+                            <li><a href="mailto:contato@victorsilvadesign.com.br"><i class="fa-regular fa-envelope"></i> E-mail</a></li>
+                            <li><a href="https://victorsilvadesign.com.br/" target="_blank"><i class="fa-solid fa-arrow-pointer"></i> Meu Site</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Redes Sociais</h4>
+                        <ul>
+                            <li><a href="https://instagram.com/iamvktr_" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+                            <li><a href="https://linkedin.com/in/victor-a-silva/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Victor Silva Design. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script para animação de scroll -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
+
+            const revealOnScroll = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target); // Anima apenas uma vez
+                    }
+                });
+            }, {
+                threshold: 0.15, // Aciona quando 15% do elemento estiver visível
+                rootMargin: "0px 0px -50px 0px"
+            });
+
+            reveals.forEach(reveal => {
+                revealOnScroll.observe(reveal);
+            });
+        });
+    </script>
+</body>
+</html>
